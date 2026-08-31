@@ -1,0 +1,17 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="15dp"
+    android:height="15dp"
+    android:viewportWidth="15"
+    android:viewportHeight="15">
+
+    <!-- Ring -->
+    <path
+        android:pathData="M7.5,0.75 A6.75,6.75 0 1,0 7.5,14.25 A6.75,6.75 0 1,0 7.5,0.75 Z"
+        android:strokeColor="#CECECE"
+        android:strokeWidth="1" />
+
+    <!-- Filled centre marks the toggle as on -->
+    <path
+        android:pathData="M7.5,3.6 A3.9,3.9 0 1,0 7.5,11.4 A3.9,3.9 0 1,0 7.5,3.6 Z"
+        android:fillColor="#CECECE" />
+</vector>

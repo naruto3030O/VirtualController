@@ -1,0 +1,59 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="147dp"
+    android:height="150dp"
+    android:viewportWidth="147"
+    android:viewportHeight="150">
+
+    <!--
+      Moving part. Drawn on the same 147x150 viewport as the base so the
+      geometry matches exactly; ViewJoystickView translates the canvas to
+      move it. Its drop shadow (dy 5, blur 2, black 52%) is drawn in code.
+    -->
+
+    <!-- Knob rim -->
+    <path android:pathData="M73.5,45.0 A30.5,30.5 0 1,0 73.5,106.0 A30.5,30.5 0 1,0 73.5,45.0 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="73" android:startY="108"
+                android:endX="75.5" android:endY="41.5">
+                <item android:offset="0" android:color="#C5C5C5" />
+                <item android:offset="1" android:color="#FFFFFF" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Knob face -->
+    <path android:pathData="M74,49 A27,27 0 1,0 74,103 A27,27 0 1,0 74,49 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="75.7705" android:startY="45.9016"
+                android:endX="73.5574" android:endY="104.77">
+                <item android:offset="0" android:color="#B7B7B7" />
+                <item android:offset="1" android:color="#FFFFFF" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- left chevron -->
+    <path
+        android:fillColor="#B1B6B8"
+        android:pathData="M52.8761 73.1332C52.7131 72.9556 52.4486 72.9556 52.2855 73.1332L50.2444 75.3576C49.9184 75.7128 49.9186 76.2883 50.2446 76.6433L52.287 78.8668C52.4502 79.0444 52.7146 79.0444 52.8777 78.8668C53.0408 78.6893 53.0408 78.4014 52.8777 78.2238L51.1296 76.3207C50.9665 76.1431 50.9665 75.8553 51.1296 75.6777L52.8761 73.7762C53.0393 73.5986 53.0393 73.3107 52.8761 73.1332Z" />
+
+    <!-- right chevron -->
+    <path
+        android:fillColor="#B1B6B8"
+        android:pathData="M95.1239 73.1332C95.2869 72.9556 95.5514 72.9556 95.7145 73.1332L97.7556 75.3576C98.0816 75.7128 98.0814 76.2883 97.7554 76.6433L95.713 78.8668C95.5498 79.0444 95.2854 79.0444 95.1223 78.8668C94.9592 78.6893 94.9592 78.4014 95.1223 78.2238L96.8704 76.3207C97.0335 76.1431 97.0335 75.8553 96.8704 75.6777L95.1239 73.7762C94.9607 73.5986 94.9607 73.3107 95.1239 73.1332Z" />
+
+    <!-- down chevron -->
+    <path
+        android:fillColor="#B1B6B8"
+        android:pathData="M76.8668 97.1239C77.0444 97.2869 77.0444 97.5514 76.8668 97.7145L74.6424 99.7556C74.2872 100.082 73.7117 100.081 73.3567 99.7554L71.1332 97.713C70.9556 97.5498 70.9556 97.2854 71.1332 97.1223C71.3107 96.9592 71.5986 96.9592 71.7762 97.1223L73.6793 98.8704C73.8569 99.0335 74.1447 99.0335 74.3223 98.8704L76.2238 97.1239C76.4014 96.9607 76.6893 96.9607 76.8668 97.1239Z" />
+
+    <!-- up chevron -->
+    <path
+        android:fillColor="#A5A5A5"
+        android:pathData="M71.1332 54.8761C70.9556 54.7131 70.9556 54.4486 71.1332 54.2855L73.3576 52.2444C73.7128 51.9184 74.2883 51.9186 74.6433 52.2446L76.8668 54.287C77.0444 54.4502 77.0444 54.7146 76.8668 54.8777C76.6893 55.0408 76.4014 55.0408 76.2238 54.8777L74.3207 53.1296C74.1431 52.9665 73.8553 52.9665 73.6777 53.1296L71.7762 54.8761C71.5986 55.0393 71.3107 55.0393 71.1332 54.8761Z" />
+</vector>

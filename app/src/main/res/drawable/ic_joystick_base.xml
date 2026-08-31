@@ -1,0 +1,41 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="147dp"
+    android:height="150dp"
+    android:viewportWidth="147"
+    android:viewportHeight="150">
+
+    <!--
+      Static part of the stick: outer bezel plus the blue-grey dish.
+      The dish's inner shadow (dy 1, blur 5.35, black 81%) has no
+      VectorDrawable equivalent and is drawn by ViewJoystickView.
+    -->
+
+    <!-- Outer bezel -->
+    <path android:pathData="M73.5,20.0 A54.5,54.5 0 1,0 73.5,129.0 A54.5,54.5 0 1,0 73.5,20.0 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="74"
+                android:centerY="124"
+                android:gradientRadius="124">
+                <item android:offset="0" android:color="#FFFFFF" />
+                <item android:offset="1" android:color="#979797" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Dish -->
+    <path android:pathData="M74,33 A42,42 0 1,0 74,117 A42,42 0 1,0 74,33 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="47"
+                android:centerY="47.5"
+                android:gradientRadius="94.9658">
+                <item android:offset="0" android:color="#A7B3B8" />
+                <item android:offset="1" android:color="#7A929E" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  Driving mode, built to the 874 x 402 dp Figma frame.
+
+  Every element is positioned with horizontal/vertical bias rather than fixed
+  margins, so the layout keeps its proportions on frames that are not exactly
+  874 x 402 instead of bunching against one edge. Bias values were derived
+  from the mockup; sizes are the dp equivalents of the rendered artwork.
+-->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drivingRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:splitMotionEvents="true">
+
+    <!-- Background: base gradient + teal pool along the bottom edge -->
+    <com.example.virtualcontroller.BackgroundView
+        android:id="@+id/background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Steering wheel, shown when STEERING is toggled on -->
+    <com.example.virtualcontroller.SteeringWheelView
+        android:id="@+id/steeringWheel"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:visibility="gone"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.92"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Settings -->
+    <ImageButton
+        android:id="@+id/btnSettings"
+        android:layout_width="29dp"
+        android:layout_height="29dp"
+        android:src="@drawable/ic_settings"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:contentDescription="Settings"
+        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintVertical_bias="0.046"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Xbox mode toggle -->
+    <ImageButton
+        android:id="@+id/btnXboxToggle"
+        android:layout_width="103dp"
+        android:layout_height="56dp"
+        android:src="@drawable/ic_xbox_off"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:contentDescription="Switch to Xbox mode"
+        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintVertical_bias="0.011"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Headlights -->
+    <ImageButton
+        android:id="@+id/btnHeadlight"
+        android:layout_width="106dp"
+        android:layout_height="106dp"
+        android:src="@drawable/ic_headlight"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:contentDescription="Headlights"
+        app:layout_constraintHorizontal_bias="0.830"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Handbrake -->
+    <ImageButton
+        android:id="@+id/btnHandbrake"
+        android:layout_width="141dp"
+        android:layout_height="129dp"
+        android:src="@drawable/ic_handbrake"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:contentDescription="Handbrake"
+        app:layout_constraintHorizontal_bias="0.978"
+        app:layout_constraintVertical_bias="0.078"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Horn -->
+    <ImageButton
+        android:id="@+id/btnHorn"
+        android:layout_width="121dp"
+        android:layout_height="125dp"
+        android:src="@drawable/ic_horn"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:contentDescription="Horn"
+        app:layout_constraintHorizontal_bias="0.006"
+        app:layout_constraintVertical_bias="0.372"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Look-around stick -->
+    <com.example.virtualcontroller.ViewJoystickView
+        android:id="@+id/viewStick"
+        android:layout_width="147dp"
+        android:layout_height="150dp"
+        app:layout_constraintHorizontal_bias="0.037"
+        app:layout_constraintVertical_bias="0.878"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Steering indicator -->
+    <com.example.virtualcontroller.SteeringArcView
+        android:id="@+id/steeringArc"
+        android:layout_width="269dp"
+        android:layout_height="113dp"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintVertical_bias="0.511"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Gas / reverse indicator -->
+    <com.example.virtualcontroller.ThrottleBarView
+        android:id="@+id/throttleBar"
+        android:layout_width="113dp"
+        android:layout_height="257dp"
+        app:layout_constraintHorizontal_bias="0.901"
+        app:layout_constraintVertical_bias="0.803"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Bottom mode toggles -->
+    <LinearLayout
+        android:id="@+id/modeToggles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/ringSteering"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/ic_toggle_ring"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Steering mode" />
+
+        <TextView
+            android:id="@+id/labelSteering"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:text="STEERING"
+            android:textAllCaps="true"
+            android:fontFamily="sans-serif"
+            android:textColor="#CECECE"
+            android:textSize="13sp"
+            android:letterSpacing="0.04" />
+
+        <ImageView
+            android:id="@+id/ringPedals"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/ic_toggle_ring"
+            android:contentDescription="Pedals mode" />
+
+        <TextView
+            android:id="@+id/labelPedals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:text="PEDALS"
+            android:textAllCaps="true"
+            android:fontFamily="sans-serif"
+            android:textColor="#CECECE"
+            android:textSize="13sp"
+            android:letterSpacing="0.04" />
+
+        <ImageView
+            android:id="@+id/ringAutoGear"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/ic_toggle_ring"
+            android:contentDescription="Auto gear" />
+
+        <TextView
+            android:id="@+id/labelAutoGear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:text="AUTO GEAR"
+            android:textAllCaps="true"
+            android:fontFamily="sans-serif"
+            android:textColor="#CECECE"
+            android:textSize="13sp"
+            android:letterSpacing="0.04" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
